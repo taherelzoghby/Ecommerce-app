@@ -1,4 +1,4 @@
-# iti
+# E-commerce app
 
 A new Flutter project.
 

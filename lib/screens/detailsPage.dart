@@ -1,13 +1,14 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:iti/constants/routes.dart';
+import 'package:iti/screens/widgets/itemReview.dart';
+import 'package:provider/provider.dart';
+
 import 'package:iti/constants/theme.dart';
 import 'package:iti/controllers/controllerProvider.dart';
-
 import 'package:iti/models/product.dart';
 import 'package:iti/screens/widgets/customButton.dart';
 import 'package:iti/screens/widgets/showToast.dart';
-import 'package:iti/screens/widgets/starRating.dart';
-import 'package:provider/provider.dart';
 
 class detailsPage extends StatelessWidget {
   const detailsPage({
@@ -20,7 +21,6 @@ class detailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-
     return Scaffold(
       backgroundColor: backGroundColor,
       body: Column(
@@ -91,36 +91,6 @@ class detailsPage extends StatelessWidget {
                             ],
                           ),
                           SizedBox(height: height * .02),
-                          //Rating
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Rating",
-                                style: Themes().titleStyle,
-                              ),
-                              Column(
-                                children: [
-                                  Row(
-                                    children: [
-                                      Text(
-                                        "${product.rate}",
-                                        style: Themes().titleStyle,
-                                      ),
-                                      const Text(
-                                        " rating",
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          color: thColor,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  StarRating(rating: product.rate.toInt())
-                                ],
-                              ),
-                            ],
-                          ),
                           SizedBox(height: height * .02),
                           //description
                           Text(
@@ -129,6 +99,33 @@ class detailsPage extends StatelessWidget {
                           ),
                           Text(product.description),
                           SizedBox(height: height * .015),
+                          //Reviews
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Reviews",
+                                style: Themes().titleStyle,
+                              ),
+                              TextButton(
+                                onPressed: () => Navigator.of(context)
+                                    .pushNamed(reviewsPageRoute),
+                                child: Text(
+                                  "View all",
+                                  style: TextStyle(color: initialColor),
+                                ),
+                              ),
+                            ],
+                          ),
+
+                          itemReview(
+                            imageProfile: 'assets/images/noUser.png',
+                            name: 'Mohamed Ahmed',
+                            rate: product.rate,
+                            content:
+                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque malesuada eget vitae amet...',
+                            date: '13 sep, 2023',
+                          ),
                         ],
                       ),
                     ),

@@ -11,3 +11,4 @@ const profilePageRoute = '/profilePage';
 const appInfoPage = '/appInfoPage';
 const developerTeamPageRoute = '/developerTeamPage';
 const orderConfimedPageRoute = '/orderConfimedPage';
+const reviewsPageRoute = '/reviews';

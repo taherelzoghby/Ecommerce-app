@@ -37,11 +37,13 @@ class introPage extends StatelessWidget {
             Text(
               title,
               style: Themes().subHeadingStyle,
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: MediaQuery.of(context).size.height * .03),
             Text(
               subTitle,
               style: Themes().bodyStyle,
+              textAlign: TextAlign.center,
             ),
           ],
         ),

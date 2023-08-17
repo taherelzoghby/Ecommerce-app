@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iti/screens/AllReviews.dart';
 import 'package:iti/screens/orderConfirmed.dart';
 import 'package:iti/screens/splashScreen.dart';
 
@@ -36,6 +37,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (_) => home());
       case cartsPageRoute:
         return MaterialPageRoute(builder: (_) => const cartsPage());
+      case reviewsPageRoute:
+        return MaterialPageRoute(builder: (_) => Reviews());
       case detailPageRoute:
         final product = settings.arguments as Product;
         return MaterialPageRoute(

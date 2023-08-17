@@ -20,8 +20,11 @@ class priceTile extends StatelessWidget {
       children: [
         Text(
           label,
-          style:
-              TextStyle(fontWeight: weight, fontSize: size, color: Colors.grey),
+          style: TextStyle(
+            fontWeight: weight,
+            fontSize: size,
+            color: Colors.grey,
+          ),
         ),
         Text(
           '\$$price',

@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:iti/constants/routes.dart';
 import 'package:iti/constants/theme.dart';
 import 'package:iti/screens/widgets/customButton.dart';
 import 'package:iti/screens/widgets/priceTile.dart';
@@ -28,7 +29,7 @@ class cartsPage extends StatelessWidget {
           children: [
             ///carts title
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 12, horizontal: 18),
+              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 18),
               child: Text(
                 'Carts',
                 style: Themes().subHeadingStyle,
@@ -99,28 +100,34 @@ class cartsPage extends StatelessWidget {
                     customButton(
                       label: 'Checkout',
                       on_tab: () {
-                        read.checkOut();
-                        show_dialog(
-                          context,
-                          title: 'Successfully',
-                          content: priceTile(
-                            label: 'Total',
-                            price: double.parse(watch.Total.toStringAsFixed(1)),
-                            size: 15,
-                            weight: FontWeight.w500,
-                          ),
-                          actions: <Widget>[
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 15),
-                              child: customButton(
-                                label: 'Ok',
-                                on_tab: () => Navigator.of(context).pop(),
-                                color: initialColor,
-                              ),
+                        if (orders.isEmpty) {
+                          show_dialog(
+                            context,
+                            title: 'Not orders',
+                            content: const priceTile(
+                              label: 'Total',
+                              price: 0,
+                              size: 15,
+                              weight: FontWeight.w500,
                             ),
-                          ],
-                        );
+                            actions: <Widget>[
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 15),
+                                child: customButton(
+                                  label: 'Ok',
+                                  on_tab: () => Navigator.of(context).pop(),
+                                  color: initialColor,
+                                ),
+                              ),
+                            ],
+                          );
+                        } else {
+                          read.checkOut();
+                          Navigator.of(context).pushNamed(
+                            orderConfimedPageRoute,
+                          );
+                        }
                       },
                       color: initialColor,
                     ),

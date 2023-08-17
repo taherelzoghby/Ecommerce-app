@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:iti/constants/colors.dart';
 import 'package:iti/constants/routes.dart';
+import 'package:iti/constants/theme.dart';
 import 'package:iti/controllers/controllerProvider.dart';
 import 'package:iti/models/product.dart';
 import 'package:iti/screens/widgets/customTextField.dart';
@@ -49,10 +49,7 @@ class ProductsPage extends StatelessWidget {
                         ),
                   Text(
                     category.isEmpty ? 'Products' : category,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 25,
-                    ),
+                    style: Themes().subHeadingStyle,
                   ),
                 ],
               ),

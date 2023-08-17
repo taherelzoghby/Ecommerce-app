@@ -1,12 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../../services/fairebaseAuth.dart';
-import '../../constants/colors.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+
 import '../../constants/routes.dart';
+import '../../constants/theme.dart';
+import '../../services/fairebaseAuth.dart';
 import '../widgets/customButton.dart';
 import '../widgets/customTextField.dart';
 import '../widgets/showToast.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 // ignore: camel_case_types
 class login extends StatefulWidget {
@@ -36,15 +37,8 @@ class _loginState extends State<login> {
             child: ListView(
               children: <Widget>[
                 SizedBox(height: height * .2),
-                const Center(
-                  child: Text(
-                    'LOGIN',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 20,
-                      color: initialColor,
-                    ),
-                  ),
+                Center(
+                  child: Text('LOGIN', style: Themes().headingStyle),
                 ),
                 SizedBox(height: height * .05),
                 customTextField(

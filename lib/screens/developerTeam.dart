@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../constants/colors.dart';
+import 'package:iti/constants/theme.dart';
 
 class developerTeam extends StatelessWidget {
   const developerTeam({super.key});
@@ -13,34 +12,26 @@ class developerTeam extends StatelessWidget {
         title: const Text('Developer Team'),
         backgroundColor: initialColor,
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Spacer(),
+            const Spacer(),
             Text(
               "Taher Amin Taher Elzoghby",
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 20,
-              ),
+              style: Themes().subHeadingStyle,
             ),
             Text(
               "Software Engineer",
-              style: TextStyle(
-                fontWeight: FontWeight.w800,
-                fontSize: 16,
-                color: thColor,
-              ),
+              style: Themes().bodyStyle,
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
                 "I'm studing at Faculty of computer and information Tanta University, interested in Flutter Technology.",
-                style: TextStyle(),
               ),
             ),
-            Spacer(flex: 4),
+            const Spacer(flex: 4),
           ],
         ),
       ),

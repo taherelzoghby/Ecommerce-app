@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../constants/colors.dart';
+import 'package:iti/constants/theme.dart';
 
 class tileInfoProfile extends StatelessWidget {
   const tileInfoProfile({

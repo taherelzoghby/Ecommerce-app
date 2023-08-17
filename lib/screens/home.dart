@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:iti/constants/theme.dart';
 
-import '../constants/colors.dart';
 import 'cartsPage.dart';
 import 'categoryPage.dart';
 import 'productsPage.dart';

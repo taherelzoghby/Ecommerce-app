@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:iti/constants/theme.dart';
 
-import '../constants/colors.dart';
 import '../models/category.dart';
 import 'widgets/itemCategory.dart';
 
@@ -39,11 +39,11 @@ class CategoryPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //category title
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 12, horizontal: 18),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 18),
               child: Text(
                 'Categories',
-                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 25),
+                style: Themes().subHeadingStyle,
               ),
             ),
             //categories content

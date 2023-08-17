@@ -1,12 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:iti/constants/theme.dart';
 import 'package:iti/screens/widgets/customButton.dart';
 import 'package:iti/screens/widgets/priceTile.dart';
 import 'package:iti/screens/widgets/showDialog.dart';
 import 'package:provider/provider.dart';
 
-import '../constants/colors.dart';
 import '../controllers/controllerProvider.dart';
 import '../models/order.dart';
 import 'widgets/cardItem.dart';
@@ -27,11 +27,11 @@ class cartsPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ///carts title
-            const Padding(
+            Padding(
               padding: EdgeInsets.symmetric(vertical: 12, horizontal: 18),
               child: Text(
                 'Carts',
-                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 25),
+                style: Themes().subHeadingStyle,
               ),
             ),
             //orders content
@@ -73,10 +73,9 @@ class cartsPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       "Order info",
-                      style:
-                          TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                      style: Themes().titleStyle,
                     ),
                     //subtotal
                     priceTile(
@@ -107,8 +106,8 @@ class cartsPage extends StatelessWidget {
                           content: priceTile(
                             label: 'Total',
                             price: double.parse(watch.Total.toStringAsFixed(1)),
-                            size: 16,
-                            weight: FontWeight.w600,
+                            size: 15,
+                            weight: FontWeight.w500,
                           ),
                           actions: <Widget>[
                             Padding(

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:iti/constants/theme.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
 import 'package:provider/provider.dart';
-
-import '../../constants/colors.dart';
 import '../../constants/routes.dart';
 import '../../controllers/controllerProvider.dart';
 import '../widgets/customButton.dart';

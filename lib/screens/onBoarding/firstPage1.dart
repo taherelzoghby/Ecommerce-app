@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../constants/theme.dart';
+
 class firstPage1 extends StatelessWidget {
   const firstPage1({super.key});
 
@@ -24,19 +26,14 @@ class firstPage1 extends StatelessWidget {
                 ),
               ),
             ),
-            const Text(
+            Text(
               'Find your favourite items',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
+              style: Themes().subHeadingStyle,
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * .03,
-            ),
-            const Text(
+            SizedBox(height: MediaQuery.of(context).size.height * .03),
+            Text(
               'Find your favourite products\n that you need to buy daily.',
-              style: TextStyle(
-                fontWeight: FontWeight.w300,
-                fontSize: 17,
-              ),
+              style: Themes().bodyStyle,
             ),
           ],
         ),

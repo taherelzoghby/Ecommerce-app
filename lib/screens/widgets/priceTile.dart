@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iti/constants/theme.dart';
 
 class priceTile extends StatelessWidget {
   const priceTile(
@@ -24,7 +25,7 @@ class priceTile extends StatelessWidget {
         ),
         Text(
           '\$$price',
-          style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+          style: Themes().body2Style,
         ),
       ],
     );

@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:iti/constants/colors.dart';
+import 'package:iti/constants/theme.dart';
 import 'package:iti/controllers/controllerProvider.dart';
 
 import 'package:iti/models/product.dart';
@@ -68,11 +68,9 @@ class detailsPage extends StatelessWidget {
                                     width: width * 0.7,
                                     child: Text(
                                       product.title,
+                                      maxLines: 3,
                                       overflow: TextOverflow.ellipsis,
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 20,
-                                      ),
+                                      style: Themes().headingStyle,
                                     ),
                                   ),
                                 ],
@@ -86,10 +84,7 @@ class detailsPage extends StatelessWidget {
                                   ),
                                   Text(
                                     "\$${product.price}",
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 18,
-                                    ),
+                                    style: Themes().titleStyle,
                                   ),
                                 ],
                               ),
@@ -100,12 +95,9 @@ class detailsPage extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Text(
+                              Text(
                                 "Rating",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 16,
-                                ),
+                                style: Themes().titleStyle,
                               ),
                               Column(
                                 children: [
@@ -113,10 +105,7 @@ class detailsPage extends StatelessWidget {
                                     children: [
                                       Text(
                                         "${product.rate}",
-                                        style: const TextStyle(
-                                          fontWeight: FontWeight.w700,
-                                          fontSize: 18,
-                                        ),
+                                        style: Themes().titleStyle,
                                       ),
                                       const Text(
                                         " rating",
@@ -134,12 +123,9 @@ class detailsPage extends StatelessWidget {
                           ),
                           SizedBox(height: height * .02),
                           //description
-                          const Text(
+                          Text(
                             "Description",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 17,
-                            ),
+                            style: Themes().titleStyle,
                           ),
                           Text(product.description),
                           SizedBox(height: height * .015),
@@ -161,19 +147,13 @@ class detailsPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
+                      Text(
                         "Total Price",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 16,
-                        ),
+                        style: Themes().titleStyle,
                       ),
                       Text(
                         "\$${product.price}",
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 18,
-                        ),
+                        style: Themes().titleStyle,
                       ),
                     ],
                   ),

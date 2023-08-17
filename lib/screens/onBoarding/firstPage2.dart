@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:iti/constants/theme.dart';
 
 class firstPage2 extends StatelessWidget {
   const firstPage2({super.key});
@@ -24,19 +25,14 @@ class firstPage2 extends StatelessWidget {
                 ),
               ),
             ),
-            const Text(
+            Text(
               'Product Delivery',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
+              style: Themes().subHeadingStyle,
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * .03,
-            ),
-            const Text(
+            SizedBox(height: MediaQuery.of(context).size.height * .03),
+            Text(
               'Yours products are delivered\n    home safely & security.',
-              style: TextStyle(
-                fontWeight: FontWeight.w300,
-                fontSize: 17,
-              ),
+              style: Themes().bodyStyle,
             ),
           ],
         ),

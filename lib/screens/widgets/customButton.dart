@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iti/constants/theme.dart';
 
 class customButton extends StatelessWidget {
   const customButton({
@@ -28,11 +29,7 @@ class customButton extends StatelessWidget {
         child: Center(
           child: Text(
             label,
-            style: const TextStyle(
-              fontWeight: FontWeight.w500,
-              fontSize: 16,
-              color: Colors.white,
-            ),
+            style: Themes().subTitle,
           ),
         ),
       ),

@@ -1,12 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../../services/fairebaseAuth.dart';
-import '../../constants/colors.dart';
+import 'package:iti/constants/theme.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+
 import '../../constants/routes.dart';
+import '../../services/fairebaseAuth.dart';
 import '../widgets/customButton.dart';
 import '../widgets/customTextField.dart';
 import '../widgets/showToast.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class rigester extends StatefulWidget {
   const rigester({super.key});
@@ -35,15 +36,8 @@ class _rigesterState extends State<rigester> {
             child: ListView(
               children: <Widget>[
                 SizedBox(height: height * .15),
-                const Center(
-                  child: Text(
-                    'SIGNUP',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 20,
-                      color: initialColor,
-                    ),
-                  ),
+                Center(
+                  child: Text('SIGNUP', style: Themes().headingStyle),
                 ),
                 SizedBox(height: height * .05),
                 customTextField(

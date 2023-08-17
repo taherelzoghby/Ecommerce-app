@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:iti/constants/routes.dart';
-import 'package:iti/services/fairebaseAuth.dart';
+import '../constants/routes.dart';
+import '../services/fairebaseAuth.dart';
 import '../models/order.dart';
 import '../models/product.dart';
 import '../services/firebaseService.dart';

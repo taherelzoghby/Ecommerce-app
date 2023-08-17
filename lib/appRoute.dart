@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+
+import 'constants/routes.dart';
+import 'models/product.dart';
 import 'screens/AppInfo.dart';
 import 'screens/cartsPage.dart';
-import 'screens/developerTeam.dart';
-import 'screens/profilePage.dart';
-import 'models/product.dart';
 import 'screens/detailsPage.dart';
-import 'screens/productsPage.dart';
-import 'constants/routes.dart';
-import 'screens/onBoarding/firstPage.dart';
+import 'screens/developerTeam.dart';
 import 'screens/home.dart';
 import 'screens/login_register/login.dart';
 import 'screens/login_register/register.dart';
+import 'screens/onBoarding/firstPage.dart';
+import 'screens/productsPage.dart';
+import 'screens/profilePage.dart';
 
 class AppRoute {
   Route generateRoute(RouteSettings settings) {

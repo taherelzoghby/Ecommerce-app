@@ -1,10 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:iti/screens/widgets/customButton.dart';
 import 'package:iti/screens/widgets/priceTile.dart';
 import 'package:iti/screens/widgets/showDialog.dart';
 import 'package:provider/provider.dart';
-
-import 'package:iti/screens/widgets/customButton.dart';
 
 import '../constants/colors.dart';
 import '../controllers/controllerProvider.dart';

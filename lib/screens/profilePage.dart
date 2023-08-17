@@ -71,10 +71,18 @@ class ProfilePage extends StatelessWidget {
               ),
               SizedBox(height: height * .03),
               //Name tile
-              tileInfoProfile(title: 'Name', subTitle: currentUser['name']),
+              tileInfoProfile(
+                title: 'Name',
+                subTitle: currentUser['name'],
+                widget: const Icon(Icons.edit),
+              ),
               SizedBox(height: height * .02),
               //Email tile
-              tileInfoProfile(title: 'Email', subTitle: currentUser['email']),
+              tileInfoProfile(
+                title: 'Email',
+                subTitle: currentUser['email'],
+                widget: const Icon(Icons.email),
+              ),
               SizedBox(height: height * .02),
               //logout
               tileInfoProfile(
@@ -82,6 +90,10 @@ class ProfilePage extends StatelessWidget {
                 subTitle: '',
                 onTap: () => context.read<controller>().signOut(context),
                 color: Colors.red,
+                widget: const Icon(
+                  Icons.logout,
+                  color: Colors.red,
+                ),
               ),
             ],
           ),

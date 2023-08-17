@@ -85,14 +85,17 @@ class ProfilePage extends StatelessWidget {
               ),
               SizedBox(height: height * .02),
               //logout
-              tileInfoProfile(
-                title: 'Logout',
-                subTitle: '',
+              InkWell(
                 onTap: () => context.read<controller>().signOut(context),
-                color: Colors.red,
-                widget: const Icon(
-                  Icons.logout,
+                child: tileInfoProfile(
+                  title: 'Logout',
+                  subTitle: '',
+                  onTap: () => context.read<controller>().signOut(context),
                   color: Colors.red,
+                  widget: const Icon(
+                    Icons.logout,
+                    color: Colors.red,
+                  ),
                 ),
               ),
             ],

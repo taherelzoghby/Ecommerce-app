@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:iti/screens/orderConfirmed.dart';
+import 'package:iti/screens/splashScreen.dart';
 
 import 'constants/routes.dart';
 import 'models/product.dart';
@@ -16,14 +18,16 @@ import 'screens/profilePage.dart';
 class AppRoute {
   Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case firstPageRoute:
+        return MaterialPageRoute(builder: (_) => const FirstPage());
       case appInfoPage:
         return MaterialPageRoute(builder: (_) => const AppInfo());
       case profilePageRoute:
         return MaterialPageRoute(builder: (_) => const ProfilePage());
       case developerTeamPageRoute:
         return MaterialPageRoute(builder: (_) => const developerTeam());
-      case firstPageRoute:
-        return MaterialPageRoute(builder: (_) => const FirstPage());
+      case splashPageRoute:
+        return MaterialPageRoute(builder: (_) => const splashScreen());
       case loginPageRoute:
         return MaterialPageRoute(builder: (_) => const login());
       case registerPageRoute:
@@ -42,6 +46,8 @@ class AppRoute {
         return MaterialPageRoute(
           builder: (_) => ProductsPage(category: category),
         );
+      case orderConfimedPageRoute:
+        return MaterialPageRoute(builder: (_) => const orderConfirm());
       default:
         return MaterialPageRoute(builder: (_) => const Scaffold());
     }

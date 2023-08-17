@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:iti/constants/theme.dart';
+import 'package:iti/screens/onBoarding/firstPage1.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
 import 'package:provider/provider.dart';
 import '../../constants/routes.dart';
 import '../../controllers/controllerProvider.dart';
 import '../widgets/customButton.dart';
-import 'firstPage1.dart';
-import 'firstPage2.dart';
 
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
@@ -32,8 +31,18 @@ class _FirstPageState extends State<FirstPage> {
           children: [
             PageView(
               children: const [
-                firstPage1(),
-                firstPage2(),
+                introPage(
+                  image: "assets/images/shop.svg",
+                  title: 'Find your favourite items',
+                  subTitle:
+                      'Find your favourite products\n that you need to buy daily.',
+                ),
+                introPage(
+                  image: "assets/images/delivery.svg",
+                  title: 'Product Delivery',
+                  subTitle:
+                      'Yours products are delivered\n    home safely & security.',
+                ),
               ],
               onPageChanged: (value) => setState(() => selectedPage = value),
             ),

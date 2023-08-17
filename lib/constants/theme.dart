@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 //colors
-const Color initialColor = Color.fromARGB(255, 178, 161, 224);
+Color initialColor = const Color.fromRGBO(105, 97, 255, 1);
 const Color scColor = Color.fromARGB(255, 229, 222, 247);
 const Color thColor = Colors.grey;
 const Color green = Colors.green;
@@ -13,7 +13,7 @@ const Color red = Colors.red;
 class Themes {
   TextStyle get headingStyle {
     return GoogleFonts.lato(
-      textStyle: const TextStyle(
+      textStyle: TextStyle(
         fontWeight: FontWeight.w700,
         fontSize: 20,
         color: initialColor,

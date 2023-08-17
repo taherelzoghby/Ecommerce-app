@@ -1,5 +1,6 @@
 //routes
-const firstPageRoute = '/';
+const splashPageRoute = '/';
+const firstPageRoute = '/firstPage';
 const loginPageRoute = '/login';
 const registerPageRoute = '/rigester';
 const homePageRoute = '/home';
@@ -9,3 +10,4 @@ const cartsPageRoute = '/cartsPage';
 const profilePageRoute = '/profilePage';
 const appInfoPage = '/appInfoPage';
 const developerTeamPageRoute = '/developerTeamPage';
+const orderConfimedPageRoute = '/orderConfimedPage';

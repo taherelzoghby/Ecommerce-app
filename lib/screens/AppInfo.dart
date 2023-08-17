@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iti/constants/theme.dart';
+import '../constants/theme.dart';
 
 class AppInfo extends StatelessWidget {
   const AppInfo({super.key});

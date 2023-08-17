@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:iti/constants/routes.dart';
-import 'package:iti/constants/theme.dart';
-import 'package:iti/controllers/controllerProvider.dart';
-import 'package:iti/screens/onBoarding/firstPage1.dart';
-import 'package:iti/screens/productsPage.dart';
-import 'package:iti/screens/widgets/customButton.dart';
-import 'package:iti/screens/widgets/priceTile.dart';
+import '../constants/routes.dart';
+import '../constants/theme.dart';
+import '../controllers/controllerProvider.dart';
+import 'onBoarding/firstPage1.dart';
+import 'widgets/customButton.dart';
+import 'widgets/priceTile.dart';
 import 'package:provider/provider.dart';
 
 class orderConfirm extends StatelessWidget {

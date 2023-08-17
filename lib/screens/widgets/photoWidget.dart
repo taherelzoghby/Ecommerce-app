@@ -1,7 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:iti/constants/theme.dart';
+
+import '../../constants/theme.dart';
 
 class photoWidgetFile extends StatelessWidget {
   const photoWidgetFile({

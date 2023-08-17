@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:iti/constants/theme.dart';
+
+import '../../constants/theme.dart';
 
 void showToastt(String message) {
   Fluttertoast.showToast(

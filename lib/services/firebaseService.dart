@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+
 import '../constants/collections.dart';
 import '../models/order.dart';
-
 import '../models/product.dart';
 
 class FirbaseService {

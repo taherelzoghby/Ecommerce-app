@@ -1,11 +1,8 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:iti/constants/theme.dart';
-import 'package:iti/screens/widgets/customButton.dart';
-import 'package:iti/screens/widgets/itemReview.dart';
+import '../constants/theme.dart';
+import 'widgets/itemReview.dart';
 
+// ignore: must_be_immutable
 class Reviews extends StatelessWidget {
   List<Widget> reviews = const [
     itemReview(
@@ -73,6 +70,8 @@ class Reviews extends StatelessWidget {
       date: '13 sep, 2023',
     ),
   ];
+
+  Reviews({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

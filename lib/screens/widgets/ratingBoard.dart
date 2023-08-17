@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:iti/constants/theme.dart';
-import 'package:iti/screens/widgets/starRating.dart';
+import '../../constants/theme.dart';
+import 'starRating.dart';
 
 class rating extends StatelessWidget {
   const rating({

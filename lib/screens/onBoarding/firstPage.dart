@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:iti/constants/theme.dart';
-import 'package:iti/screens/onBoarding/firstPage1.dart';
+import '../../constants/theme.dart';
+import 'firstPage1.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
 import 'package:provider/provider.dart';
 import '../../constants/routes.dart';

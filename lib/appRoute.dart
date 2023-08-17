@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:iti/screens/AllReviews.dart';
-import 'package:iti/screens/orderConfirmed.dart';
-import 'package:iti/screens/splashScreen.dart';
+import 'screens/AllReviews.dart';
+import 'screens/orderConfirmed.dart';
+import 'screens/splashScreen.dart';
 
 import 'constants/routes.dart';
 import 'models/product.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iti/constants/theme.dart';
+import '../constants/theme.dart';
 
 import '../models/category.dart';
 import 'widgets/itemCategory.dart';

@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:iti/screens/widgets/customButton.dart';
 import 'package:iti/screens/widgets/priceTile.dart';
 import 'package:iti/screens/widgets/showDialog.dart';
@@ -45,7 +46,15 @@ class cartsPage extends StatelessWidget {
                             physics: const NeverScrollableScrollPhysics(),
                             itemCount: orders.length,
                             itemBuilder: (context, index) {
-                              return CardItem(order: orders[index]);
+                              return AnimationConfiguration.staggeredList(
+                                position: index,
+                                child: SlideAnimation(
+                                  verticalOffset: 60,
+                                  child: FadeInAnimation(
+                                    child: CardItem(order: orders[index]),
+                                  ),
+                                ),
+                              );
                             },
                           )
                         : const orderEmptyWidget(),

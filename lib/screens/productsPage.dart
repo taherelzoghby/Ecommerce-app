@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:iti/constants/colors.dart';
 import 'package:iti/constants/routes.dart';
 import 'package:iti/controllers/controllerProvider.dart';
@@ -73,8 +74,18 @@ class ProductsPage extends StatelessWidget {
                 child: GridView.builder(
                   itemCount: allProducts.length,
                   itemBuilder: (context, index) {
-                    return itemProduct(
-                      product: allProducts[index],
+                    return AnimationConfiguration.staggeredGrid(
+                      columnCount: 2,
+                      position: index,
+                      duration: const Duration(milliseconds: 375),
+                      child: SlideAnimation(
+                        verticalOffset: 50.0,
+                        child: FadeInAnimation(
+                          child: itemProduct(
+                            product: allProducts[index],
+                          ),
+                        ),
+                      ),
                     );
                   },
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

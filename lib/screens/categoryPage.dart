@@ -47,18 +47,19 @@ class CategoryPage extends StatelessWidget {
               ),
             ),
             //categories content
-            GridView.builder(
-              itemCount: categories.length,
+            GridView(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) => itemCategory(
-                category: categories[index],
-              ),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 20,
                 childAspectRatio: 3.5 / 4,
               ),
+              children: categories
+                  .map(
+                    (e) => itemCategory(category: e),
+                  )
+                  .toList(),
             ),
           ],
         ),

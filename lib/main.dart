@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:iti/controllers/blocs/authBloc/auth_bloc.dart';
-import 'package:iti/controllers/blocs/ordersPageBloc/orders_bloc.dart';
-import 'package:iti/observe.dart';
+import 'controllers/blocs/authBloc/auth_bloc.dart';
+import 'controllers/blocs/ordersPageBloc/orders_bloc.dart';
+import 'observe.dart';
 
 import 'appRoute.dart';
 import 'controllers/blocs/productsPageBloc/products_page_bloc.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:iti/controllers/blocs/authBloc/auth_bloc.dart';
-import 'package:iti/widgets/showToast.dart';
+import '../../controllers/blocs/authBloc/auth_bloc.dart';
+import '../../widgets/showToast.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import '../../constants/routes.dart';

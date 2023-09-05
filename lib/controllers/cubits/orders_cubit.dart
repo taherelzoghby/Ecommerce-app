@@ -4,7 +4,6 @@ import 'package:meta/meta.dart';
 import '../../models/order.dart';
 import '../../models/product.dart';
 import '../../services/firebaseService.dart';
-import '../blocs/ordersPageBloc/orders_bloc.dart';
 
 part 'orders_state.dart';
 

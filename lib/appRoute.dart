@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'screens/products/AllReviews.dart';
-import 'screens/carts/orderConfirmed.dart';
-import 'screens/onBoarding/splashScreen.dart';
 
 import 'constants/routes.dart';
 import 'models/product.dart';
 import 'screens/AppInfo.dart';
 import 'screens/carts/cartsPage.dart';
-import 'screens/products/detailsPage.dart';
+import 'screens/carts/orderConfirmed.dart';
 import 'screens/developerTeam.dart';
 import 'screens/home.dart';
 import 'screens/login_register/login.dart';
 import 'screens/login_register/register.dart';
 import 'screens/onBoarding/firstPage.dart';
+import 'screens/onBoarding/splashScreen.dart';
+import 'screens/products/AllReviews.dart';
+import 'screens/products/detailsPage.dart';
 import 'screens/products/productsPage.dart';
 import 'screens/profile/profilePage.dart';
 

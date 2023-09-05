@@ -1,11 +1,14 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import '../../constants/theme.dart';
-import 'firstPage1.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:iti/controllers/blocs/productsPageBloc/products_page_bloc.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
-import 'package:provider/provider.dart';
+
 import '../../constants/routes.dart';
-import '../../controllers/controllerProvider.dart';
-import '../widgets/customButton.dart';
+import '../../constants/theme.dart';
+import '../../widgets/customButton.dart';
+import 'firstPage1.dart';
 
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
@@ -18,9 +21,8 @@ class _FirstPageState extends State<FirstPage> {
   int selectedPage = 0;
   @override
   void initState() {
+    BlocProvider.of<ProductsPageBloc>(context).add(GetProductsEvent());
     super.initState();
-    context.read<controller>().getProducts();
-    context.read<controller>().getOrders();
   }
 
   @override

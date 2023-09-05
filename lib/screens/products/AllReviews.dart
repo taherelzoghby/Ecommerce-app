@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../constants/theme.dart';
-import 'widgets/itemReview.dart';
+import '../../constants/theme.dart';
+import '../../widgets/itemReview.dart';
 
 // ignore: must_be_immutable
 class Reviews extends StatelessWidget {

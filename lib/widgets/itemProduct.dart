@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/routes.dart';
-import '../../models/product.dart';
+import '../constants/routes.dart';
+import '../models/product.dart';
 
 // ignore: camel_case_types
 class itemProduct extends StatelessWidget {

@@ -1,13 +1,13 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iti/constants/routes.dart';
 import 'package:iti/constants/theme.dart';
-import 'package:iti/controllers/controllerProvider.dart';
-import 'package:iti/screens/widgets/photoWidget.dart';
-import 'package:iti/screens/widgets/tileInfoProfile.dart';
+import 'package:iti/controllers/blocs/authBloc/auth_bloc.dart';
+import 'package:iti/widgets/photoWidget.dart';
+import 'package:iti/widgets/tileInfoProfile.dart';
 import 'package:iti/services/fairebaseAuth.dart';
-import 'package:provider/provider.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -85,18 +85,26 @@ class ProfilePage extends StatelessWidget {
               ),
               SizedBox(height: height * .02),
               //logout
-              InkWell(
-                onTap: () => context.read<controller>().signOut(context),
-                child: tileInfoProfile(
-                  title: 'Logout',
-                  subTitle: '',
-                  onTap: () => context.read<controller>().signOut(context),
-                  color: Colors.red,
-                  widget: const Icon(
-                    Icons.logout,
+              BlocBuilder<AuthBloc, AuthState>(
+                builder: (context, state) {
+                  AuthBloc bloc = BlocProvider.of<AuthBloc>(context);
+                  return tileInfoProfile(
+                    title: 'Logout',
+                    subTitle: '',
+                    onTap: () {
+                      bloc.add(SignOutEvent());
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                        loginPageRoute,
+                        (route) => false,
+                      );
+                    },
                     color: Colors.red,
-                  ),
-                ),
+                    widget: const Icon(
+                      Icons.logout,
+                      color: Colors.red,
+                    ),
+                  );
+                },
               ),
             ],
           ),

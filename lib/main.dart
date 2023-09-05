@@ -1,11 +1,17 @@
+import 'dart:async';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+import 'package:iti/controllers/blocs/authBloc/auth_bloc.dart';
+import 'package:iti/controllers/blocs/ordersPageBloc/orders_bloc.dart';
+import 'package:iti/observe.dart';
 
 import 'appRoute.dart';
-import 'controllers/controllerProvider.dart';
+import 'controllers/blocs/productsPageBloc/products_page_bloc.dart';
+import 'controllers/cubits/orders_cubit.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -17,9 +23,15 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  runZoned(() => Bloc.observer = Observe());
   runApp(
-    ChangeNotifierProvider<controller>(
-      create: (_) => controller(),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => AuthBloc()),
+        BlocProvider(create: (_) => ProductsPageBloc()),
+        BlocProvider(create: (_) => OrdersBloc()),
+        BlocProvider(create: (_) => OrdersCubit()),
+      ],
       child: MyApp(appRoute: AppRoute()),
     ),
   );
@@ -28,7 +40,9 @@ Future<void> main() async {
 // ignore: must_be_immutable
 class MyApp extends StatelessWidget {
   MyApp({super.key, required this.appRoute});
+
   AppRoute appRoute;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

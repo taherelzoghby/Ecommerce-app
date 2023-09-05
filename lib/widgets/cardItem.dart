@@ -1,9 +1,10 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iti/constants/theme.dart';
-import 'package:iti/controllers/controllerProvider.dart';
+import 'package:iti/controllers/cubits/orders_cubit.dart';
 import 'package:iti/models/order.dart';
-import 'package:provider/provider.dart';
 
 class CardItem extends StatelessWidget {
   const CardItem({
@@ -11,11 +12,11 @@ class CardItem extends StatelessWidget {
     required this.order,
   }) : super(key: key);
   final ProductOrder order;
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    controller read = context.read<controller>();
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
       child: Card(
@@ -57,22 +58,37 @@ class CardItem extends StatelessWidget {
                       style: const TextStyle(color: Colors.grey),
                     ),
                     //incre   -    decre
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        //incre
-                        IconButton(
-                          onPressed: () => read.addPro(order),
-                          icon: const Icon(Icons.add),
-                        ),
-                        //num
-                        Text("${order.orderNumbers}"),
-                        //decre
-                        IconButton(
-                          onPressed: () => read.subPro(order),
-                          icon: const Icon(Icons.remove),
-                        ),
-                      ],
+                    BlocConsumer<OrdersCubit, OrdersState>(
+                      builder: (context, state) {
+                        return Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            ///incre
+                            IconButton(
+                              onPressed: () =>
+                                  BlocProvider.of<OrdersCubit>(context)
+                                      .IncrePrdocustOrders(
+                                order,
+                              ),
+                              icon: const Icon(Icons.add),
+                            ),
+
+                            ///num
+                            Text("${order.orderNumbers}"),
+
+                            ///decre
+                            IconButton(
+                              onPressed: () =>
+                                  BlocProvider.of<OrdersCubit>(context)
+                                      .DecrePrdocustOrders(
+                                order,
+                              ),
+                              icon: const Icon(Icons.remove),
+                            ),
+                          ],
+                        );
+                      },
+                      listener: (context, state) {},
                     ),
                   ],
                 ),
@@ -81,7 +97,9 @@ class CardItem extends StatelessWidget {
             //remove
             IconButton(
               onPressed: () =>
-                  context.read<controller>().deleteOrder(documentId: order.id),
+                  BlocProvider.of<OrdersCubit>(context).deleteOrder(
+                order.id,
+              ),
               icon: const Icon(Icons.delete),
             ),
           ],

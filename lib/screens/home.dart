@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../constants/theme.dart';
 
-import 'cartsPage.dart';
-import 'categoryPage.dart';
-import 'productsPage.dart';
-import 'profilePage.dart';
+import 'carts/cartsPage.dart';
+import 'category/categoryPage.dart';
+import 'products/productsPage.dart';
+import 'profile/profilePage.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -17,7 +17,7 @@ class _homeState extends State<home> {
   List<Widget> screens = [
     ProductsPage(category: ''),
     CategoryPage(),
-    const cartsPage(),
+    cartsPage(),
     const ProfilePage()
   ];
   int ind = 0;

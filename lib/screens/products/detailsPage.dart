@@ -1,26 +1,30 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iti/constants/routes.dart';
-import 'package:iti/screens/widgets/itemReview.dart';
-import 'package:provider/provider.dart';
+import 'package:iti/controllers/cubits/orders_cubit.dart';
+import 'package:iti/widgets/itemReview.dart';
 
 import 'package:iti/constants/theme.dart';
-import 'package:iti/controllers/controllerProvider.dart';
 import 'package:iti/models/product.dart';
-import 'package:iti/screens/widgets/customButton.dart';
-import 'package:iti/screens/widgets/showToast.dart';
+import 'package:iti/widgets/customButton.dart';
+import 'package:iti/widgets/showToast.dart';
 
+// ignore: camel_case_types
 class detailsPage extends StatelessWidget {
-  const detailsPage({
+  detailsPage({
     Key? key,
     required this.product,
   }) : super(key: key);
   final Product product;
+  bool flag = false;
 
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
+    OrdersCubit bloc = BlocProvider.of<OrdersCubit>(context);
     return Scaffold(
       backgroundColor: backGroundColor,
       body: Column(
@@ -156,24 +160,23 @@ class detailsPage extends StatelessWidget {
                   ),
                   SizedBox(height: height * .015),
                   //add to Cart
-                  customButton(
-                    label: 'Add to Cart',
-                    on_tab: () async {
-                      await context.read<controller>().orderOrNot(product);
-                      // ignore: use_build_context_synchronously
-                      if (context.read<controller>().flag == true) {
-                        // ignore: use_build_context_synchronously
-                        showToastt("this Item is already add!");
-                      } else {
-                        // ignore: use_build_context_synchronously
-                        await context
-                            .read<controller>()
-                            .addOrder(product: product);
-                        // ignore: use_build_context_synchronously
-                        showToastt('this Item is added successfully.');
-                      }
+                  BlocConsumer<OrdersCubit, OrdersState>(
+                    listener: (context, state) {},
+                    builder: (context, state) {
+                      return customButton(
+                        label: 'Add to Cart',
+                        on_tab: () {
+                          bloc.isOrder(product);
+                          if (bloc.flag == true) {
+                            showToastt("this Item is already add!");
+                          } else {
+                            bloc.addOrder(product);
+                            showToastt('this Item is added successfully.');
+                          }
+                        },
+                        color: initialColor,
+                      );
                     },
-                    color: initialColor,
                   ),
                 ],
               ),

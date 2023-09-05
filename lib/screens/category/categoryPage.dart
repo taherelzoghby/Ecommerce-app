@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../constants/theme.dart';
+import '../../constants/theme.dart';
 
-import '../models/category.dart';
-import 'widgets/itemCategory.dart';
+import '../../models/category.dart';
+import '../../widgets/itemCategory.dart';
 
 // ignore: must_be_immutable
 class CategoryPage extends StatelessWidget {

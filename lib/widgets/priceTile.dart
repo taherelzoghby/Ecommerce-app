@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../constants/theme.dart';
+import '../constants/theme.dart';
 
 class priceTile extends StatelessWidget {
   const priceTile(
